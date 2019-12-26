@@ -1,0 +1,16 @@
+<div class="form-group color-picker-component" @click="selectcolor($event)">
+  <label class="label" for>{{ name }}</label>
+  <div class="alignment-icon-container position">
+    <div type="text" class="form-control font-size input" style="float: left; position: relative;">
+      <span v-on:click="active($event)" class="color-box" :style="{'background-color': myColors}"></span>
+      <input class="input-color-picker" type="text" id="color-code" :value="myColors" />
+    </div>
+  </div>
+
+  <div v-if="showPicker" class="block-outside d-flex align-items-center flex-column">
+    <div class="color-picker">
+      <Chrome class="p-2" v-model="myColors"></Chrome>
+      <Compact class="p-2" v-model="myColors"></Compact>
+    </div>
+  </div>
+</div>

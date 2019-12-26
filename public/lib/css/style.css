@@ -1,0 +1,24 @@
+.input {
+    height: 32px;
+    border: 1px solid #dde1e8 !important;
+    border-radius: 2px;
+    width: 175px;
+  }
+  .input .color-box {
+    border: 1px solid #f1f3f6;
+    text-align: center;
+    width: 20px !important;
+    height: 20px !important;
+    padding: 0px !important;
+    display: block !important;
+    border-radius: 4px !important;
+    position: absolute !important;
+    top: 6px !important;
+  }
+  .input input {
+    width: 112px !important;
+    left: 128px;
+  }
+  .input:focus {
+    box-shadow: none !important;
+  }

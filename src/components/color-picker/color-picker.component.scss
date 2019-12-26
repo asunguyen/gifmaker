@@ -1,0 +1,16 @@
+.color-picker-component {
+  .block-outside {
+    min-height: 348px;
+  }
+  .color-picker {
+    position: absolute;
+    z-index: 999;
+    left: 0;
+  }
+  .input-color-picker {
+    outline: none;
+  }  
+  .position {
+        left: -47px;
+  }
+}
