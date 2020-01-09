@@ -3,16 +3,12 @@ import Router from "vue-router";
 import login from "./views/login/login.vue";
 import register from "./views/register/register.vue";
 import dashboard from "./views/dashboard/dashboard.vue";
+import upload from "./views/upload/upload.vue";
 Vue.use(Router);
 const router = new Router({
   routes: [
     {
       path: "/",
-      component: dashboard
-    },
-    {
-      path: "/dashboard",
-      name: "dashboard",
       component: dashboard
     },
     {
@@ -24,7 +20,18 @@ const router = new Router({
       path: "/register",
       name: "register",
       component: register
-    }
+    },
+    {
+      path: "/dashboard",
+      name: "dashboard",
+      component: dashboard
+    },
+    {
+      path: "/upload",
+      name: "upload",
+      component: upload
+    },
+    
   ]
 });
 

@@ -1,0 +1,10 @@
+.menu-header {
+  box-shadow: 0 0 2px 2px #ccc;
+  position: fixed;
+  height: 60px;
+  z-index: 99;
+  background: #fff;
+  .nav-item {
+    cursor: pointer;
+  }
+}

@@ -1,199 +1,97 @@
 <div id="dashboard">
-    <nav class="navbar navbar-expand-lg navbar-light menu-header fixed-top pl-5 pr-5">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="@/assets/logo.png" width="30" height="30" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto w-100">
-                    <li class="nav-item active pl-3 pr-3">
-                        <a class="nav-link" @click="tab = 'makergif'">GIF MAKER <span
-                                class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item pl-3 pr-3">
-                        <a class="nav-link" @click="tab = 'videotogif'">RESIZE</a>
-                    </li>
-                    <li class="nav-item pl-3 pr-3">
-                        <a class="nav-link" @click="tab = 'giftovideo'">CROP</a>
-                    </li>
-                    <li class="nav-item pl-3 pr-3">
-                        <a class="nav-link" @click="tab = 'giftovideo'">OPTIMIZE</a>
-                    </li>
-                    <li class="nav-item pl-3 pr-3">
-                        <a class="nav-link" @click="tab = 'giftovideo'">CONVERT</a>
-                    </li>
-                    <li class="nav-item dropdown pl-3 pr-3">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                            aria-haspopup="true" aria-expanded="false">MORE TOOL</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
-                        </div>
-                    </li>
-                    <div class="nav-item dropdown float-right pl-3 pr-3">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                            aria-haspopup="true" aria-expanded="false">LANG</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">VI</a>
-                            <a class="dropdown-item" href="#">EN</a>
-                            <a class="dropdown-item" href="#">FR</a>
-                        </div>
-                    </div>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <headers />
     <div class="title-header pt-5 pb-3">
         <h1>HEADING 1</h1>
         <p>Đây là nội dung mô tả thêm</p>
     </div>
-    <div class="adv-header w-100">
-        <div class="container">
-            <h3>ADV</h3>
-        </div>
-    </div>
+    <adv />
     <div class="list-product">
         <div class="container">
-            <div class="card item-product p-2 float-left">
-                <!-- <img class="card-img-top w-100"> -->
-                <i class="material-icons card-img-top w-100">control_camera</i>
-                <div class="card-body">
-                    <h5 class="card-title">Compress IMAGE</h5>
-                    <p class="card-text">Compress JPG, PNG and GIFs white saving space and maintaining quality</p>
+            <div class="row">
+                <div @click="goUpload('compress-image')" class="col col-3 p-2">
+                    <card title="Compress IMAGE"
+                        text="Compress JPG, PNG and GIFs white saving space and maintaining quality">
+                        <i class="material-icons card-img-top w-100">control_camera</i>
+                    </card>
                 </div>
-            </div>
-            <div class="card item-product p-2 float-left">
-                <i class="material-icons">photo_size_select_large</i>
-                <div class="card-body">
-                    <h5 class="card-title">Resize IMAGE</h5>
-                    <p class="card-text">Define your dimensions by percent or pixel and resize your JPG, PNG and GIF images</p>
+                <div @click="goUpload('resize-image')" class="col col-3 p-2">
+                    <card title="Resize IMAGE"
+                        text="Define your dimensions by percent or pixel and resize your JPG, PNG and GIF images">
+                        <i class="material-icons">photo_size_select_large</i>
+                    </card>
                 </div>
-            </div>
-            <div class="card item-product p-2 float-left">
-                <i class="material-icons">crop</i>
-                <div class="card-body">
-                    <h5 class="card-title">Crop IMAGE</h5>
-                    <p class="card-text">Crop JPG, PNG and GIFs with ease Choose pixels to define your rectangle or use our visual editor</p>
+                <div @click="goUpload('crop-image')" class="col col-3 p-2">
+                    <card title="Crop IMAGE"
+                        text="Crop JPG, PNG and GIFs with ease Choose pixels to define your rectangle or use our visual editor">
+                        <i class="material-icons">crop</i>
+                    </card>
                 </div>
-            </div>
-            <div class="card item-product p-2 float-left">
-                <img class="card-img-top w-100">
-                <div class="card-body">
-                    <h5 class="card-title">Convert to JPG</h5>
-                    <p class="card-text">Turn PNG, GIF, TIF or RAW format imagges to JPG in bulk with ease</p>
+                <div @click="goUpload('convert-to-jpg')" class="col col-3 p-2">
+                    <card title="Convert to JPG"
+                        text="Turn PNG, GIF, TIF or RAW format imagges to JPG in bulk with ease">
+                        <i class="material-icons">crop</i>
+                    </card>
                 </div>
-            </div>
-            <div class="card item-product p-2 float-left">
-                <img class="card-img-top w-100">
-                <div class="card-body">
-                    <h5 class="card-title">Convert from JPG</h5>
-                    <p class="card-text">Turn JPG images to PNG and GIF. Choose saveral JPGs to create an animated GIF in seconds</p>
+                <div @click="goUpload('convert-from-jpg')" class="col col-3 p-2">
+                    <card title="Convert from JPG"
+                        text="Turn JPG images to PNG and GIF. Choose saveral JPGs to create an animated GIF in seconds">
+                        <i class="material-icons">crop</i>
+                    </card>
                 </div>
-            </div>
-            <div class="card item-product p-2 float-left">
-                <img class="card-img-top w-100">
-                <div class="card-body">
-                    <h5 class="card-title">Photo editor</h5>
-                    <p class="card-text">Spice up your pictures with text effects frames or tickers. Simple editing tools for your image needs</p>
+                <div @click="goUpload('photo-editor')" class="col col-3 p-2">
+                    <card title="Photo editor"
+                        text="Spice up your pictures with text effects frames or tickers. Simple editing tools for your image needs">
+                        <i class="material-icons">crop</i>
+                    </card>
                 </div>
-            </div>
-            <div class="card item-product p-2 float-left">
-                <img class="card-img-top w-100">
-                <div class="card-body">
-                    <h5 class="card-title">Watermark IMAGE</h5>
-                    <p class="card-text">Stamp an image or text over your images in seconds. Choose the typography transparency and position</p>
+                <div @click="goUpload('wartermark-image')" class="col col-3 p-2">
+                    <card title="Watermark IMAGE"
+                        text="Stamp an image or text over your images in seconds. Choose the typography transparency and position">
+                        <i class="material-icons">crop</i>
+                    </card>
                 </div>
-            </div>
-            <div class="card item-product p-2 float-left">
-                <img class="card-img-top w-100">
-                <div class="card-body">
-                    <h5 class="card-title">Meme generator</h5>
-                    <p class="card-text">Create your memes online with ease. Caption meme images or upload your pictures to make custom memes.</p>
+                <div @click="goUpload('meme-generator')" class="col col-3 p-2">
+                    <card title="Meme generator"
+                        text="Create your memes online with ease. Caption meme images or upload your pictures to make custom memes.">
+                        <i class="material-icons">crop</i>
+                    </card>
                 </div>
-            </div>
-            <div class="card item-product p-2 float-left">
-                <img class="card-img-top w-100">
-                <div class="card-body">
-                    <h5 class="card-title">Rotate IMAGE</h5>
-                    <p class="card-text">Rotate many images JPG, PNG or GIF at same time. Choose to rotate only landscape or portrait images!</p>
+                <div @click="goUpload('rotate-image')" class="col col-3 p-2">
+                    <card title="Rotate IMAGE"
+                        text="Rotate many images JPG, PNG or GIF at same time. Choose to rotate only landscape or portrait images!">
+                        <i class="material-icons">crop</i>
+                    </card>
                 </div>
-            </div>
-            <div class="card item-product p-2 float-left">
-                <img class="card-img-top w-100">
-                <div class="card-body">
-                    <h5 class="card-title">HTML to IMAGE</h5>
-                    <p class="card-text">Convert webpages in HTML to JPG or SVG. Copy and paste the URL of the page you want and convert it to IMAGE with a click</p>
+                <div @click="goUpload('html-to-image')" class="col col-3 p-2">
+                    <card title="HTML to IMAGE"
+                        text="Convert webpages in HTML to JPG or SVG. Copy and paste the URL of the page you want and convert it to IMAGE with a click">
+                        <i class="material-icons">crop</i>
+                    </card>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="adv-header w-100">
-        <div class="container">
-            <h3>ADV</h3>
-        </div>
-    </div>
-
+    <adv />
     <div class="about w-100 pt-5 pb-3 float-left">
         <div class="container">
             <div class="row">
-                <div class="col col-4">
-                    <div class="card item-product p-2 float-left">
-                        <img class="card-img-top w-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the
-                                card's content.</p>
-                        </div>
-                    </div>
+                <div class="col col-4 p-2">
+                    <card title="Card title"
+                        text="Some quick example text to build on the card title and make up the bulk of the card's content.">
+                    </card>
                 </div>
-                <div class="col col-4">
-                    <div class="card item-product p-2 float-left">
-                        <img class="card-img-top w-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the
-                                card's content.</p>
-                        </div>
-                    </div>
+                <div class="col col-4 p-2">
+                    <card title="Card title"
+                        text="Some quick example text to build on the card title and make up the bulk of the card's content.">
+                    </card>
                 </div>
-                <div class="col col-4">
-                    <div class="card item-product p-2 float-left">
-                        <img class="card-img-top w-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the
-                                card's content.</p>
-                        </div>
-                    </div>
+                <div class="col col-4 p-2">
+                    <card title="Card title"
+                        text="Some quick example text to build on the card title and make up the bulk of the card's content.">
+                    </card>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="footer w-100 float-left">
-        <div class="container">
-            <div class="row">
-                <div class="col col-6">
-                    <ul>
-                        <li><a href="">Privacy</a></li>
-                        <li><a href="">Privacy</a></li>
-                        <li><a href="">Privacy</a></li>
-                        <li><a href="">Privacy</a></li>
-                    </ul>
-                </div>
-                <div class="col col-6"></div>
-            </div>
-        </div>
-    </div>
+    <footers />
 </div>
