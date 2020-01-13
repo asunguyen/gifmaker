@@ -1,0 +1,29 @@
+<div class="editor">
+    <heading :title="$route.query.feature" text="Đây là nội dung mô tả thêm" />
+
+    <div class="container">
+        <div class="row p-1 m-0 bg-light">
+            <div v-for="i of feature" class="select-feature col-2 p-1 m-0" @click="goFeature(i.title, i.path)">
+                <div class="p-1 w-100 h-100 d-flex flex-column justify-content-center align-items-center border rounded"
+                    :class="{ 'bg-white': $route.path.includes(i.path) }">
+                    <div v-html=i.icon></div>
+                    <p class="m-0 p-0">{{i.title}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container p-2">
+        <img :src="img_url" class="w-100">
+    </div>
+
+    <div class="p-2">
+        width: <b>{{img_info.width}} px</b>,
+        height: <b>{{img_info.height}} px</b>,
+        type: <b>{{img_info.type}}</b>
+    </div>
+
+    <router-view />
+
+    <!-- <button class="btn btn-success">Download</button> -->
+</div>

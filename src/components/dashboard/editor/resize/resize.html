@@ -1,0 +1,37 @@
+<div class="container mb-5">
+    <div class="card">
+        <div class="card-body d-flex flex-column justify-content-center align-items-center">
+            <div class="input-group mb-3 w-50">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Percentage</span>
+                </div>
+                <input v-model="percentage" type="number" class="form-control"
+                    placeholder="Enter new image Percentage (empty = auto)">
+            </div>
+            <p><b>or</b></p>
+            <div class="input-group mb-3 w-50">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Width</span>
+                </div>
+                <input v-model="width" type="number" class="form-control"
+                    placeholder="Enter new image width (empty = auto)">
+            </div>
+            <div class="input-group mb-3 w-50">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Height</span>
+                </div>
+                <input v-model="height" type="number" class="form-control"
+                    placeholder="Enter new image height (empty = auto)">
+            </div>
+            <!-- <p><b>If the aspect ratio does not match:</b></p>
+            <select v-model="aspect_ratio" class="custom-select w-50">
+                <option value="0" selected>Center and crop to fit</option>
+                <option value="1">Stretch to fit</option>
+                <option value="2">Force original aspect ratio</option>
+            </select> -->
+        </div>
+        <div class="card-footer">
+            <button @click="doResize" class="btn btn-primary">Resize image!</button>
+        </div>
+    </div>
+</div>

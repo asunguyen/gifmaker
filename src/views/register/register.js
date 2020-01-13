@@ -1,5 +1,5 @@
 import { service } from "../login/login.service.js";
-import LoadingCom from "../../components/loading/loading.vue";
+import LoadingCom from "../../components/comon/loading/loading.vue";
 export default {
     components: {
         LoadingCom

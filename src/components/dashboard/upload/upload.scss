@@ -1,0 +1,10 @@
+.upload {
+  min-height: calc(100vh - 260px);
+  .clear-browse {
+    &::after {
+      content: "" !important;
+      background-color: #fff !important;
+      border-left: none !important;
+    }
+  }
+}
